@@ -35,6 +35,11 @@ Training uses the [TGIF dataset](https://github.com/IDLabMedia/tgif-dataset). Fo
 
 ---
 
+##  Pretrained Weights
+
+Obtain pretrained weights from the original [TruFor repository](https://github.com/grip-unina/TruFor) for the SegFormer, DnCNN, noiseprint++, and modal extractor weights. Only diffusionprint weights are available in this repo
+
+
 ##  Weights
 
 The weights for TruFor checkpoint trained on AI manipulations using diffusionprint are avaiable on [Hugginface] (https://huggingface.co/giakoupg/diffusionprint)
