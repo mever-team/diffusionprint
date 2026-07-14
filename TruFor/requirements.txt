@@ -1,0 +1,15 @@
+numpy
+tqdm
+scipy
+scikit-learn
+yacs
+albumentations
+torch
+torchvision
+timm
+Pillow
+matplotlib
+Cython
+torch_dct
+tensorboardX
+git+https://github.com/dwgoon/jpegio.git

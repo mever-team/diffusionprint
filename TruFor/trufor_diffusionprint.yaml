@@ -1,0 +1,39 @@
+CUDNN:
+  BENCHMARK: true
+  DETERMINISTIC: false
+  ENABLED: true
+WORKERS: 8
+BATCH_SIZE: 16
+ACCUMULATE_ITERS: 4
+DATASET:
+  NUM_CLASSES: 2
+  TRAIN:
+    - './tgif2_fr/tgif_train_auth.txt'
+    - './tgif2_fr/tgifflux_train.txt'
+    - './tgif2_fr/tgif_sd2_fr_train.txt'
+    - './tgif2_fr/tgif_sdxl_fr_train.txt'
+  VAL:
+    - './tgif2_fr/tgif_val_auth.txt'
+    - './tgif2_fr/tgifflux_val.txt'
+    - './tgif2_fr/tgif_sd2_fr_val.txt'
+    - './tgif2_fr/tgif_sdxl_fr_val.txt'
+  IMG_SIZE: 512
+  CLASS_WEIGHTS: [0.5, 2.5]
+MODEL:
+  NAME: detconfcmxdiffusionprint_tgif2sagid-bal-all
+  MODS: ('RGB','NP++')
+  PRETRAINED: 'pretrained/segformer/mit_b2.pth'
+  EXTRA:
+      BACKBONE: mit_b2
+      NP_WEIGHTS: 'pretrained/diffusionprint/diffusionprint.pth'
+      NP_OUT_CHANNELS: 64
+      FIX_MODULES: ['NP++']
+      DECODER: MLPDecoder
+      DECODER_EMBED_DIM: 512
+      PREPRC: 'imagenet'
+      BN_EPS: 0.001
+      BN_MOMENTUM: 0.1
+      DETECTION: 'confpool'
+      CONF: true 
+TEST:
+  MODEL_FILE: '../weights/trufor.pth.tar'

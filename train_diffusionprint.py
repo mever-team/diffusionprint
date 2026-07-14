@@ -187,7 +187,8 @@ def log_epoch(csv_path, epoch, avg_loss, min_loss, max_loss,
             row.extend([f'{avg_instance_loss:.6f}', f'{avg_cls_loss:.6f}', f'{cls_acc:.4f}'])
         writer.writerow(row)
 
-if __name__ == '__main__'
+
+if __name__ == '__main__':
     args = parse_args()
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -371,7 +372,6 @@ if __name__ == '__main__'
             output = model(anchors, positives, cats, neg_imgs, neg_cats,
                            anchor_gen_labels=gen_labels, neg_gen_labels=neg_gens)
 
-            # Unpack: scalar (instance only) or (total, instance, cls, cls_acc)
             if isinstance(output, tuple):
                 loss, instance_loss, cls_loss, cls_acc_batch = output
             else:
