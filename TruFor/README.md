@@ -42,7 +42,7 @@ Obtain pretrained weights from the original [TruFor repository](https://github.c
 
 ##  Weights
 
-The weights for TruFor checkpoint trained on AI manipulations using diffusionprint are avaiable on [Hugginface] (https://huggingface.co/giakoupg/diffusionprint)
+The weights for TruFor checkpoint trained on AI manipulations using diffusionprint are avaiable on [Hugginface](https://huggingface.co/giakoupg/diffusionprint)
 
 
 ---
